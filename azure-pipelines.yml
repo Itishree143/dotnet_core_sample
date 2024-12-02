@@ -39,6 +39,9 @@ steps:
     testResultsFormat: 'XUnit'
     testResultsFiles: '$(Agent.TempDirectory)/*.trx'
     testRunTitle: 'Publish Test Results $(Agent.TempDirectory)/*.trx'
+- task: PublishCodeCoverageResults@2
+  inputs:
+    summaryFileLocation: '$(Agent.TempDirectory)/*/coverage.cobertura.xml'
 
 
 
