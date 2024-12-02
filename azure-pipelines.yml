@@ -24,6 +24,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
+    projects: '**/*.csproj'
     feedsToUse: 'select'
     includeNuGetOrg: false
     verbosityRestore: 'Detailed'
