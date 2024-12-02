@@ -34,6 +34,11 @@ steps:
     command: 'test'
     projects: '**/*.csproj'
     arguments: '--collect:"XPlat Code Coverage"'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '$(Agent.TempDirectory)/*.trx'
+    testRunTitle: 'Publish Test Results $(Agent.TempDirectory)/*.trx'
 
 
 
